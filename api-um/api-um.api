@@ -1,0 +1,20 @@
+syntax = "v1"
+
+info(
+	title: "api-um"
+	desc: "Api numero um"
+	author: "Piêtro Braga Aquino Júnior"
+	email: "pietrobragaprofissional@gmail.com"
+)
+
+type (
+	ApiUmMethodRequest  struct{}
+	ApiUmMethodResponse {
+		Resposta string `json:"resposta"`
+	}
+)
+
+service api-um {
+	@handler ApiUmMethod
+	get /method (ApiUmMethodRequest) returns (ApiUmMethodResponse)
+}

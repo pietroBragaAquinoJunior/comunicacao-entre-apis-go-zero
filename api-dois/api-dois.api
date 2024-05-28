@@ -1,0 +1,20 @@
+syntax = "v1"
+
+info(
+	title: "api-dois"
+	desc: "Api numero dois"
+	author: "Piêtro Braga Aquino Júnior"
+	email: "pietrobragaprofissional@gmail.com"
+)
+
+type (
+	ApiDoisMethodRequest  struct{}
+	ApiDoisMethodResponse {
+		Resposta string `json:"resposta"`
+	}
+)
+
+service api-dois {
+	@handler ApiDoisMethod
+	get /method (ApiDoisMethodRequest) returns (ApiDoisMethodResponse)
+}
